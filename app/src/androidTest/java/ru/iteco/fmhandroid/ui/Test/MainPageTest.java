@@ -42,6 +42,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import kotlin.io.TextStreamsKt;
@@ -54,7 +55,7 @@ import ru.iteco.fmhandroid.ui.Steps.MainSteps;
 import androidx.test.espresso.NoMatchingViewException;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 public class MainPageTest {
     AuthorizationSteps authorizationSteps = new AuthorizationSteps();
     MainSteps mainSteps = new MainSteps();

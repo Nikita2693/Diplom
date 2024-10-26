@@ -32,6 +32,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
@@ -77,7 +78,7 @@ public class OurMissionTest {
     public void checkShowOrHideQuote() throws InterruptedException {
         String testQuote = "Все сотрудники хосписа - это адвокаты пациента, его прав и потребностей. Поиск путей решения различных задач - это и есть хосписный индивидуальный подход к паллиативной помощи.";
         ourMissionSteps.showOrHideQuote(2);
-        FileHelper.elementWaiting(withId(R.id.our_mission_item_list_recycler_view), 2000);
+        OurMissionPage.checkShowOrHideQuote();
         ourMissionSteps.descriptionIsDisplayed(testQuote);
         ourMissionSteps.showOrHideQuote(2);
     }

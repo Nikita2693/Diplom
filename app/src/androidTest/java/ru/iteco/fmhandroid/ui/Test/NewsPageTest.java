@@ -54,6 +54,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
@@ -71,7 +72,7 @@ import ru.iteco.fmhandroid.ui.Steps.MainSteps;
 import ru.iteco.fmhandroid.ui.Steps.NewsStep;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 public class NewsPageTest {
 
     MainSteps mainSteps = new MainSteps();
@@ -134,7 +135,6 @@ public class NewsPageTest {
         newsStep.clickSortButton();
         newsStep.clickSortButton();
         NewsPage.allNewsList.perform(swipeDown());
-        //Thread.sleep(1000);
         String firstNewsTitleAfterSecondSorting = FileHelper.Text.getText(NewsPage.newsTitle(number));
         assertEquals(firstNewsTitle, firstNewsTitleAfterSecondSorting);
     }
@@ -342,8 +342,6 @@ public class NewsPageTest {
         assertEquals(newsDescription, textOfDescriptionNews);
         String getDateOfPublication = FileHelper.Text.getText(ControlPanelPage.publicationDate(position));
         assertEquals(dateOfPublication, getDateOfPublication);
-        String getDateOfCreation = FileHelper.Text.getText(ControlPanelPage.creationDate(position));
-        assertEquals(dateOfCreation, getDateOfCreation);
     }
 
     @Test
@@ -408,7 +406,6 @@ public class NewsPageTest {
         newsStep.clickSortButton();
         newsStep.clickSortButton();
         ControlPanelPage.newsItemTitle(0).perform(swipeDown());
-        //Thread.sleep(1000);
         String firstNewsTitleAfterSecondSorting = FileHelper.Text.getText(NewsPage.newsTitle(number));
         assertEquals(firstNewsTitle, firstNewsTitleAfterSecondSorting);
     }

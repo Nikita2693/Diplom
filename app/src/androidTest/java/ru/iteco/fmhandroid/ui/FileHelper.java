@@ -1,35 +1,20 @@
 package ru.iteco.fmhandroid.ui;
 
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.swipeUp;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
-import static androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
-import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 
-import android.os.IBinder;
-import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.widget.NestedScrollView;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.PerformException;
-import androidx.test.espresso.Root;
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.ViewInteraction;
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.espresso.util.HumanReadables;
 import androidx.test.espresso.util.TreeIterables;
 
@@ -43,8 +28,6 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.TimeoutException;
-
-import ru.iteco.fmhandroid.R;
 
 public class FileHelper {
     public FileHelper() {
@@ -94,8 +77,9 @@ public class FileHelper {
         };
 
     }
-    public static void elementWaiting(Matcher matcher, int millis) {
+    public static ViewInteraction elementWaiting(Matcher matcher, int millis) {
         onView(isRoot()).perform(waitForElement(matcher, millis));
+        return null;
     }
     public static class Text {
 

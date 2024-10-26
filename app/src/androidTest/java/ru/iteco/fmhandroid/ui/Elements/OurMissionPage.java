@@ -19,6 +19,7 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 import ru.iteco.fmhandroid.R;
+import ru.iteco.fmhandroid.ui.FileHelper;
 
 public class OurMissionPage {
     public static ViewInteraction loveIsAll = onView(withText("Love is all"));
@@ -46,5 +47,8 @@ public class OurMissionPage {
                         && view.equals(((ViewGroup) parent).getChildAt(position));
             }
         };
+    }
+    public static void checkShowOrHideQuote() {
+        FileHelper.elementWaiting(withId(R.id.our_mission_item_list_recycler_view), 2000);
     }
 }

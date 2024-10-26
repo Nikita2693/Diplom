@@ -39,6 +39,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
@@ -48,7 +49,7 @@ import ru.iteco.fmhandroid.ui.FileHelper;
 import ru.iteco.fmhandroid.ui.Steps.AuthorizationSteps;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 public class AutorizationTests {
 
     AuthorizationSteps authorizationSteps = new AuthorizationSteps();

@@ -7,6 +7,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import androidx.test.espresso.ViewInteraction;
 
 import ru.iteco.fmhandroid.R;
+import ru.iteco.fmhandroid.ui.FileHelper;
 
 public class AboutPage {
     public static ViewInteraction version = onView(withId(R.id.about_version_title_text_view));
@@ -18,4 +19,8 @@ public class AboutPage {
     public static ViewInteraction companyInfo = onView(withId(R.id.about_company_info_label_text_view));
     public static ViewInteraction returnBtn = onView(withId(R.id.about_back_image_button));
     public static ViewInteraction tradeMarkImage = onView(withId(R.id.trademark_image_view));
+
+    public static void waitLogin() {
+        FileHelper.elementWaiting(withId(R.id.login_text_input_layout), 6000);
+    }
 }

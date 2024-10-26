@@ -7,6 +7,7 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -42,9 +43,9 @@ public class AuthorizationSteps {
 
         signInButton.check(matches(isDisplayed()));
         signInButton.perform(click());
-        Thread.sleep(1000);
 
     }
+
     public void logOut () {
         Allure.step("Разлогинется в приложении");
         authorizationButton.perform(click());
